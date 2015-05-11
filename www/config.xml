@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.giammy.hsk1ita" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Hsk1 Italiano</name>
+<widget id="com.giammy.hsk2ita" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Hsk 2 Italiano</name>
     <description>
-        Elenco dei caratteri dell'esame HSK, livello 1, con traduzione in italiano.
+        Elenco dei caratteri dell'esame HSK, livello 1 e 2, con traduzione in italiano.
     </description>
     <author email="giangiammy@gmail.com" href="http://giammy.com">
         Gianluca Moro
