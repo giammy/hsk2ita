@@ -31,21 +31,43 @@
  	pages[pages.length - 2].destroy();
       }
       */
-      /* $scope.navi.pushPage('detail.html', {title : selectedItem.title}); */
-      $scope.navi.resetToPage('detail.html', {title : selectedItem.title});
+
+      var pages = $scope.navi.getPages();
+      console.log("pages.length=%i", pages.length);
+      console.log("pages = %s", pages);
+
+      
+      if (pages.length > 3) {
+ 	pages[pages.length - 2].destroy();
+      }
+
+      var pages = $scope.navi.getPages();
+      console.log("pages.length=%i", pages.length);
+      console.log("pages = %s", pages);
+      
+
+      $scope.navi.pushPage('detail.html', {title : selectedItem.title});
+      /* $scope.navi.resetToPage('detail.html', {title : selectedItem.title}); */
+
+      var pages = $scope.navi.getPages();
+      console.log("after reset pages.length=%i", pages.length);
+      console.log("pages = %s", pages);
+
+
     };
 
     $scope.showReplaceRandomDetail = function() {
       var selectedItem = $data.items[Math.floor(Math.random() * 153)];
       $data.selectedItem = selectedItem;
       /* $scope.navi.replacePage('detail.html', {title : selectedItem.title}); */
-      /*
+
+      var pages = $scope.navi.getPages();      
       if (pages.length > 3) {
  	pages[pages.length - 2].destroy();
       }
-      */
-      /* $scope.navi.pushPage('detail.html', {title : selectedItem.title}); */
-      $scope.navi.resetToPage('detail.html', {title : selectedItem.title});
+      
+      $scope.navi.pushPage('detail.html', {title : selectedItem.title});
+      /* $scope.navi.resetToPage('detail.html', {title : selectedItem.title}); */
     };
 
   });
