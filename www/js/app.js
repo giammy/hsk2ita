@@ -24,35 +24,18 @@
     $scope.showReplaceDetail = function(index) {
       var selectedItem = $data.items[index];
       $data.selectedItem = selectedItem;
-      /*      $scope.navi.replacePage('detail.html', {title : selectedItem.title}); */
-      /*      $scope.navi.popPage(); */
-      /*      
-      if (pages.length > 3) {
- 	pages[pages.length - 2].destroy();
-      }
+
+      var pages = $scope.navi.getPages();
+      /*
+      console.log("pages.length=%i", pages.length);
+      console.log("pages = %s", pages);
       */
-
-      var pages = $scope.navi.getPages();
-      console.log("pages.length=%i", pages.length);
-      console.log("pages = %s", pages);
-
       
       if (pages.length > 3) {
  	pages[pages.length - 2].destroy();
       }
-
-      var pages = $scope.navi.getPages();
-      console.log("pages.length=%i", pages.length);
-      console.log("pages = %s", pages);
-      
 
       $scope.navi.pushPage('detail.html', {title : selectedItem.title});
-      /* $scope.navi.resetToPage('detail.html', {title : selectedItem.title}); */
-
-      var pages = $scope.navi.getPages();
-      console.log("after reset pages.length=%i", pages.length);
-      console.log("pages = %s", pages);
-
 
     };
 
@@ -86,7 +69,6 @@
       var data = {};
       
       data.items = [
-
 { idx: '0', pidx: '302', nidx: '1', title: '爱', label: 'ài', desc: 'amore; amare; piacere; affetto', image: 'love.jpg' },
 { idx: '1', pidx: '0', nidx: '2', title: '八', label: 'bā', desc: 'otto; 8', image: '8.png' },
 { idx: '2', pidx: '1', nidx: '3', title: '爸爸', label: 'bàba', desc: 'papà (informale)', image: 'dad.png' },
@@ -254,43 +236,43 @@
 { idx: '164', pidx: '163', nidx: '165', title: '船', label: 'chuán', desc: 'barca; nave', image: 'zzship.jpg' },
 { idx: '165', pidx: '164', nidx: '166', title: '次', label: 'cì', desc: 'volta', image: 'zztimes.jpg' },
 { idx: '166', pidx: '165', nidx: '167', title: '从', label: 'cóng', desc: 'da; proviene da', image: 'zzfrom.jpg' },
-{ idx: '167', pidx: '166', nidx: '168', title: '错', label: 'cuò', desc: 'sbagliato', image: 'zzwrong.jpg' },
+{ idx: '167', pidx: '166', nidx: '168', title: '错', label: 'cuò', desc: 'sbagliato; complesso; colpa', image: 'zzwrong.jpg' },
 { idx: '168', pidx: '167', nidx: '169', title: '打篮球', label: 'dǎlánqiú', desc: 'pallacanestro', image: 'zzbasketball.jpg' },
-{ idx: '169', pidx: '168', nidx: '170', title: '大家', label: 'dàjiā', desc: 'tutti', image: 'zzeveryone.jpg' },
+{ idx: '169', pidx: '168', nidx: '170', title: '大家', label: 'dàjiā', desc: 'maestro; tutti', image: 'zzeveryone.jpg' },
 { idx: '170', pidx: '169', nidx: '171', title: '但是', label: 'dànshì', desc: 'ma; però', image: 'zzbut.jpg' },
 { idx: '171', pidx: '170', nidx: '172', title: '到', label: 'dào', desc: 'a; arrivare a', image: 'zzto.jpg' },
 { idx: '172', pidx: '171', nidx: '173', title: '得', label: 'de', desc: 'particella', image: 'zzpart.jpg' },
-{ idx: '173', pidx: '172', nidx: '174', title: '等', label: 'děng', desc: 'aspettare', image: 'zztowait.jpg' },
-{ idx: '174', pidx: '173', nidx: '175', title: '等等', label: 'dìdi', desc: 'fratello minore', image: 'zzbrother.jpg' },
-{ idx: '175', pidx: '174', nidx: '176', title: '弟弟', label: 'dìyī', desc: 'il primo', image: 'zzthefirst.jpg' },
-{ idx: '176', pidx: '175', nidx: '177', title: '懂', label: 'dǒng', desc: 'capire', image: 'zztounderstand.jpg' },
+{ idx: '173', pidx: '172', nidx: '174', title: '等', label: 'děng', desc: 'grado; tipo; aspettare', image: 'zztowait.jpg' },
+{ idx: '174', pidx: '173', nidx: '175', title: '等等', label: 'dìdi', desc: 'fratello minore', image: 'zzyoungerbrother.jpg' },
+{ idx: '175', pidx: '174', nidx: '176', title: '弟一', label: 'dìyī', desc: 'il primo', image: 'zzthefirst.jpg' },
+{ idx: '176', pidx: '175', nidx: '177', title: '懂', label: 'dǒng', desc: 'capire; comprendere', image: 'zztounderstand.jpg' },
 { idx: '177', pidx: '176', nidx: '178', title: '房间', label: 'fángjiān', desc: 'stanza', image: 'zzroom.jpg' },
-{ idx: '178', pidx: '177', nidx: '179', title: '非常', label: 'fēicháng', desc: 'molto', image: 'zzvery.jpg' },
-{ idx: '179', pidx: '178', nidx: '180', title: '服务员', label: 'fúwùyuán', desc: 'commesso', image: 'zzattendant.jpg' },
-{ idx: '180', pidx: '179', nidx: '181', title: '高', label: 'gāo', desc: 'alto', image: 'zzhigh.jpg' },
-{ idx: '181', pidx: '180', nidx: '182', title: '告诉', label: 'gàosu', desc: 'dire; raccontare', image: 'zztotell.jpg' },
-{ idx: '182', pidx: '181', nidx: '183', title: '哥哥', label: 'gēge', desc: 'fratello maggiore', image: 'zzbrother.jpg' },
-{ idx: '183', pidx: '182', nidx: '184', title: '给', label: 'gěi', desc: 'dare; a', image: 'zztogive.jpg' },
+{ idx: '178', pidx: '177', nidx: '179', title: '非常', label: 'fēicháng', desc: 'molto; straordinario; insolito', image: 'zzvery.jpg' },
+{ idx: '179', pidx: '178', nidx: '180', title: '服务员', label: 'fúwùyuán', desc: 'commesso; cameriere', image: 'zzattendant.jpg' },
+{ idx: '180', pidx: '179', nidx: '181', title: '高', label: 'gāo', desc: 'alto, di persone o cose; di alto livello', image: 'zzhigh.jpg' },
+{ idx: '181', pidx: '180', nidx: '182', title: '告诉', label: 'gàosu', desc: 'dire; raccontare; far conoscere', image: 'zztotell.jpg' },
+{ idx: '182', pidx: '181', nidx: '183', title: '哥哥', label: 'gēge', desc: 'fratello maggiore', image: 'zzolderbrother.jpg' },
+{ idx: '183', pidx: '182', nidx: '184', title: '给', label: 'gěi', desc: 'dare; lasciare', image: 'zztogive.jpg' },
 { idx: '184', pidx: '183', nidx: '185', title: '公共汽车', label: 'gōnggòngqìchē', desc: 'autobus', image: 'zzbus.jpg' },
 { idx: '185', pidx: '184', nidx: '186', title: '公斤', label: 'gōngjīn', desc: 'kg', image: 'zzkg.jpg' },
-{ idx: '186', pidx: '185', nidx: '187', title: '公司', label: 'gōngsī', desc: 'compagnia', image: 'zzcompany.jpg' },
-{ idx: '187', pidx: '186', nidx: '188', title: '贵', label: 'guì', desc: 'costoso', image: 'zzexpensive.jpg' },
-{ idx: '188', pidx: '187', nidx: '189', title: '过', label: 'guo', desc: 'passato', image: 'zzpast.jpg' },
-{ idx: '189', pidx: '188', nidx: '190', title: '还', label: 'hái', desc: 'anche', image: 'zzalso.jpg' },
+{ idx: '186', pidx: '185', nidx: '187', title: '公司', label: 'gōngsī', desc: 'compagnia; azienda', image: 'zzcompany.jpg' },
+{ idx: '187', pidx: '186', nidx: '188', title: '贵', label: 'guì', desc: 'costoso; prezioso', image: 'zzexpensive.jpg' },
+{ idx: '188', pidx: '187', nidx: '189', title: '过', label: 'guo', desc: 'azione nel passato; attraversare; andare oltre', image: 'zzpast.jpg' },
+{ idx: '189', pidx: '188', nidx: '190', title: '还', label: 'hái', desc: 'anche; e inoltre', image: 'zzalso.jpg' },
 { idx: '190', pidx: '189', nidx: '191', title: '孩子', label: 'háizi', desc: 'bambino', image: 'zzchildren.jpg' },
 { idx: '191', pidx: '190', nidx: '192', title: '好吃', label: 'hǎochī', desc: 'buono da mangiare', image: 'zzdelicious.jpg' },
 { idx: '192', pidx: '191', nidx: '193', title: '号', label: 'hào', desc: 'numero', image: 'zznumber.jpg' },
 { idx: '193', pidx: '192', nidx: '194', title: '黑', label: 'hēi', desc: 'nero', image: 'zzblack.jpg' },
 { idx: '194', pidx: '193', nidx: '195', title: '红', label: 'hóng', desc: 'rosso', image: 'zzred.jpg' },
-{ idx: '195', pidx: '194', nidx: '196', title: '欢迎', label: 'huānyíng', desc: 'dare il benvenuto', image: 'zztowelcome.jpg' },
+{ idx: '195', pidx: '194', nidx: '196', title: '欢迎', label: 'huānyíng', desc: 'dare il benvenuto; essere ricevuti bene', image: 'zztowelcome.jpg' },
 { idx: '196', pidx: '195', nidx: '197', title: '回答', label: 'huídá', desc: 'rispondere', image: 'zztoanswer.jpg' },
 { idx: '197', pidx: '196', nidx: '198', title: '机场', label: 'jīchǎng', desc: 'aereoporto', image: 'zzairport.jpg' },
-{ idx: '198', pidx: '197', nidx: '199', title: '鸡蛋', label: 'jīdàn', desc: 'uovo', image: 'zzegg.jpg' },
+{ idx: '198', pidx: '197', nidx: '199', title: '鸡蛋', label: 'jīdàn', desc: 'uovo di gallina', image: 'zzchickensegg.jpg' },
 { idx: '199', pidx: '198', nidx: '200', title: '件', label: 'jiàn', desc: 'class. per pezzo', image: 'zzclpieces.jpg' },
 { idx: '200', pidx: '199', nidx: '201', title: '教室', label: 'jiàoshì', desc: 'classe di scuola', image: 'zzclassroom.jpg' },
-{ idx: '201', pidx: '200', nidx: '202', title: '姐姐', label: 'jiějie', desc: 'sorella maggiore', image: 'zzsister.jpg' },
+{ idx: '201', pidx: '200', nidx: '202', title: '姐姐', label: 'jiějie', desc: 'sorella maggiore', image: 'zzoldersister.jpg' },
 { idx: '202', pidx: '201', nidx: '203', title: '介绍', label: 'jièshào', desc: 'presentare; presentarsi', image: 'zztointroduce.jpg' },
-{ idx: '203', pidx: '202', nidx: '204', title: '进', label: 'jìn', desc: 'entrare', image: 'zztoenter.jpg' },
+{ idx: '203', pidx: '202', nidx: '204', title: '进', label: 'jìn', desc: 'entrare; ricevere', image: 'zztoenter.jpg' },
 { idx: '204', pidx: '203', nidx: '205', title: '近', label: 'jìn', desc: 'vicino', image: 'zznear.jpg' },
 { idx: '205', pidx: '204', nidx: '206', title: '就', label: 'jiù', desc: 'e quindi', image: 'zzandso.jpg' },
 { idx: '206', pidx: '205', nidx: '207', title: '觉得', label: 'juéde', desc: 'pensare', image: 'zztothink.jpg' },
@@ -311,7 +293,7 @@
 { idx: '221', pidx: '220', nidx: '222', title: '慢', label: 'màn', desc: 'lento', image: 'zzslow.jpg' },
 { idx: '222', pidx: '221', nidx: '223', title: '忙', label: 'máng', desc: 'indaffarato', image: 'zzbusy.jpg' },
 { idx: '223', pidx: '222', nidx: '224', title: '每', label: 'měi', desc: 'ciscuno', image: 'zzeach.jpg' },
-{ idx: '224', pidx: '223', nidx: '225', title: '妹妹', label: 'mèimei', desc: 'sorella inferiore', image: 'zzsister.jpg' },
+{ idx: '224', pidx: '223', nidx: '225', title: '妹妹', label: 'mèimei', desc: 'sorella minore', image: 'zzsister.jpg' },
 { idx: '225', pidx: '224', nidx: '226', title: '门', label: 'mén', desc: 'porta; cancello', image: 'zzdoor.jpg' },
 { idx: '226', pidx: '225', nidx: '227', title: '男人', label: 'nánrén', desc: 'uomo (maschio)', image: 'zzmen.jpg' },
 { idx: '227', pidx: '226', nidx: '228', title: '您', label: 'nín', desc: 'tu (forma di rispetto)', image: 'zzyou.jpg' },
