@@ -31,7 +31,8 @@
  	pages[pages.length - 2].destroy();
       }
       */
-      $scope.navi.pushPage('detail.html', {title : selectedItem.title});
+      /* $scope.navi.pushPage('detail.html', {title : selectedItem.title}); */
+      $scope.navi.resetToPage('detail.html', {title : selectedItem.title});
     };
 
     $scope.showReplaceRandomDetail = function() {
@@ -43,7 +44,8 @@
  	pages[pages.length - 2].destroy();
       }
       */
-      $scope.navi.pushPage('detail.html', {title : selectedItem.title});
+      /* $scope.navi.pushPage('detail.html', {title : selectedItem.title}); */
+      $scope.navi.resetToPage('detail.html', {title : selectedItem.title});
     };
 
   });
