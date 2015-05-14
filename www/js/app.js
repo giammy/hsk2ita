@@ -26,9 +26,11 @@
       $data.selectedItem = selectedItem;
       /*      $scope.navi.replacePage('detail.html', {title : selectedItem.title}); */
       /*      $scope.navi.popPage(); */
+      /*      
       if (pages.length > 3) {
  	pages[pages.length - 2].destroy();
       }
+      */
       $scope.navi.pushPage('detail.html', {title : selectedItem.title});
     };
 
@@ -36,9 +38,11 @@
       var selectedItem = $data.items[Math.floor(Math.random() * 153)];
       $data.selectedItem = selectedItem;
       /* $scope.navi.replacePage('detail.html', {title : selectedItem.title}); */
+      /*
       if (pages.length > 3) {
  	pages[pages.length - 2].destroy();
       }
+      */
       $scope.navi.pushPage('detail.html', {title : selectedItem.title});
     };
 
