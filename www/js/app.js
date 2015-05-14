@@ -26,8 +26,8 @@
       $data.selectedItem = selectedItem;
       /*      $scope.navi.replacePage('detail.html', {title : selectedItem.title}); */
       /*      $scope.navi.popPage(); */
-      while (pages.length > 2) {
- 	pages[pages.length - 1].destroy();
+      while (pages.length > 3) {
+ 	pages[pages.length - 2].destroy();
       }
       $scope.navi.pushPage('detail.html', {title : selectedItem.title});
     };
@@ -36,8 +36,8 @@
       var selectedItem = $data.items[Math.floor(Math.random() * 153)];
       $data.selectedItem = selectedItem;
       /* $scope.navi.replacePage('detail.html', {title : selectedItem.title}); */
-      while (pages.length > 2) {
- 	pages[pages.length - 1].destroy();
+      while (pages.length > 3) {
+ 	pages[pages.length - 2].destroy();
       }
       $scope.navi.pushPage('detail.html', {title : selectedItem.title});
     };
